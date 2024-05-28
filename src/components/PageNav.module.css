@@ -7,3 +7,16 @@
   display: flex;
   justify-content: space-between;
 }
+
+/* to make a link active when I click on it: */
+.nav :global(.active) {
+  background-color: green;
+}
+
+/* to use a global test class we have to change the .test to :global(.test)*/
+/* .test {
+  background-color: red;
+} */
+:global(.test) {
+  background-color: red;
+}

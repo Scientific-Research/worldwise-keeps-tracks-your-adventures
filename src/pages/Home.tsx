@@ -8,6 +8,7 @@ export const Home = () => {
     <>
       <PageNav />
       <AppLayoutNav />
+      {/* <h1 className="test">WorldWise</h1> */}
       <h1>WorldWise</h1>
       {/* the below a href will reload the whole page and therefore, this is not what we want as SPA => Single Page Application! that's why i comment it out and i use the Link from react-router-dom instead! */}
       {/* <a href="/pricing">go to Pricing Page!</a> */}
