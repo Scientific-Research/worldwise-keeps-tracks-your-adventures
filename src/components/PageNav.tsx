@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 // using NavLink instead of Link to give us the active class in CSS => class='active' which we can use it later to determine which class we have already selected!!
+import styles from "./PageNav.module.css";
 
 export const PageNav = () => {
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul>
         <li>
           <NavLink to="/">Home</NavLink>
