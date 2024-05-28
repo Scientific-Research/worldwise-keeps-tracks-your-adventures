@@ -1,4 +1,5 @@
 // import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { PageNav } from "../components/PageNav";
 
 export const Home = () => {
@@ -10,7 +11,7 @@ export const Home = () => {
       {/* <a href="/pricing">go to Pricing Page!</a> */}
 
       {/* Using Link to go to the Pricing page without loading the whole page! => making this as SPA => Single Page Application*/}
-      {/* <Link to="/pricing">Pricing</Link> */}
+      <Link to="/appLayout">Go to the App Layout</Link>
     </>
   );
 };
