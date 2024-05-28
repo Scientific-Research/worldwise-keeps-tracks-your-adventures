@@ -1,3 +1,5 @@
+import styles from "./AppLayoutNav.module.css";
+
 export const AppLayoutNav = () => {
-  return <nav>App Navigation</nav>;
+  return <nav className={styles.nav}>App Navigation</nav>;
 };
