@@ -2,7 +2,7 @@ export const Home = () => {
   return (
     <>
       <div>WorldWise</div>
-      <a href="/pricing">Click me!</a>
+      <a href="/pricing">go to Pricing Page!</a>
     </>
   );
 };
