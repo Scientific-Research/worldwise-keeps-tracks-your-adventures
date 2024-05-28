@@ -1,22 +1,57 @@
-.nav {
+/* .nav {
   background-color: orangered;
-}
+} */
 
-.nav ul {
+/* .nav ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
-}
+} */
 
 /* to make a link active when I click on it: */
-.nav :global(.active) {
+/* .nav :global(.active) {
   background-color: green;
-}
+} */
 
 /* to use a global test class we have to change the .test to :global(.test)*/
 /* .test {
   background-color: red;
 } */
-:global(.test) {
+/* :global(.test) {
   background-color: red;
+} */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.nav a:link,
+.nav a:visited {
+  text-decoration: none;
+  color: var(--color-light--2);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* CSS Modules feature */
+.nav a:global(.active) {
+  color: var(--color-brand--2);
+}
+
+a.ctaLink:link,
+a.ctaLink:visited {
+  background-color: var(--color-brand--2);
+  color: var(--color-dark--0);
+  padding: 0.8rem 2rem;
+  border-radius: 7px;
 }
