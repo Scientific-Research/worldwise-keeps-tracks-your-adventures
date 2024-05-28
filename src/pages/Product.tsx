@@ -1,3 +1,10 @@
+import { PageNav } from "../components/PageNav";
+
 export const Product = () => {
-  return <div>Product</div>;
+  return (
+    <>
+      <PageNav />
+      <h1>Product</h1>
+    </>
+  );
 };

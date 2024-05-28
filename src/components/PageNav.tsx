@@ -13,9 +13,6 @@ export const PageNav = () => {
         <li>
           <Link to="/product">Product</Link>
         </li>
-        <li>
-          <Link to="*">Page Not Found</Link>
-        </li>
       </ul>
     </nav>
   );

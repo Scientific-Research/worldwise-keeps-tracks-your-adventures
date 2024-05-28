@@ -1,3 +1,10 @@
+import { PageNav } from "../components/PageNav";
+
 export const PageNotFound = () => {
-  return <div>Page Not Found :(</div>;
+  return (
+    <>
+      <PageNav />
+      <h1>Page Not Found :(</h1>
+    </>
+  );
 };
