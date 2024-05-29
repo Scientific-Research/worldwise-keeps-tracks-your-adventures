@@ -22,7 +22,8 @@
   border-radius: 5px;
 }
 
-/* CSS Modules feature */
+/* CSS Modules feature
+when we use NavLink, it will add automatically active class to the element and we can use it here to change the color of selected item!*/
 .nav a:global(.active) {
   background-color: var(--color-dark--0);
 }
