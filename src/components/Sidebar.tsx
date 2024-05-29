@@ -12,6 +12,7 @@ export const Sidebar = () => {
       {/* we use outlet to show all the nested Routes here: http://localhost:5173/app/countries  */}
       {/* we use outlet to show all the nested Routes here: http://localhost:5173/app/cities  */}
       {/* we use outlet to show all the nested Routes here: http://localhost:5173/app/form  */}
+      {/* Outlet is something like children but with a difference: children is a prop and Outlet is a Route */}
       <Outlet />
 
       <footer className={styles.footer}>
