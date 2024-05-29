@@ -1,11 +1,11 @@
-import styles from "./Footer.module.css";
+// import styles from "./Footer.module.css";
 
-export const Footer = () => {
-  return (
-    <footer className={styles.footer}>
-      <p className={styles.copyright}>
-        &copy; Copyright {new Date().getFullYear()} by Maximilian Karimi.
-      </p>
-    </footer>
-  );
-};
+// export const Footer = () => {
+//   return (
+//     <footer className={styles.footer}>
+//       <p className={styles.copyright}>
+//         &copy; Copyright {new Date().getFullYear()} by Maximilian Karimi.
+//       </p>
+//     </footer>
+//   );
+// };

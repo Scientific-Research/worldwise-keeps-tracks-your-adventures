@@ -1,11 +1,11 @@
-import { Footer } from "../components/Footer";
 import { Sidebar } from "./../components/Sidebar";
+
+import styles from "./AppLayout.module.css";
 
 export const AppLayout = () => {
   return (
-    <>
+    <div className={styles.app}>
       <Sidebar />
-      <Footer />
-    </>
+    </div>
   );
 };

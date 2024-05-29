@@ -9,6 +9,11 @@ export const Sidebar = () => {
       <AppLayoutNav />
 
       <p>List of cities</p>
+      <footer className={styles.footer}>
+        <p className={styles.copyright}>
+          &copy; Copyright {new Date().getFullYear()} by Maximilian Karimi
+        </p>
+      </footer>
     </div>
   );
 };
