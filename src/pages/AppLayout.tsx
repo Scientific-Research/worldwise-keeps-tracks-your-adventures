@@ -1,10 +1,11 @@
-import { AppLayoutNav } from "../components/AppLayoutNav";
+import { Footer } from "../components/Footer";
+import { Sidebar } from "./../components/Sidebar";
 
 export const AppLayout = () => {
   return (
     <>
-      <AppLayoutNav />
-      <div>AppLayout</div>
+      <Sidebar />
+      <Footer />
     </>
   );
 };
