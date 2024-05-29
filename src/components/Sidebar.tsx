@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { AppLayoutNav } from "./AppLayoutNav";
 import { Logo } from "./Logo";
 import styles from "./Sidebar.module.css";
@@ -8,7 +9,11 @@ export const Sidebar = () => {
       <Logo />
       <AppLayoutNav />
 
-      <p>List of cities</p>
+      {/* we use outlet to show all the nested Routes here: http://localhost:5173/app/countries  */}
+      {/* we use outlet to show all the nested Routes here: http://localhost:5173/app/cities  */}
+      {/* we use outlet to show all the nested Routes here: http://localhost:5173/app/form  */}
+      <Outlet />
+
       <footer className={styles.footer}>
         <p className={styles.copyright}>
           &copy; Copyright {new Date().getFullYear()} by Maximilian Karimi
