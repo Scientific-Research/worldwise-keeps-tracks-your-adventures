@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 const BASE_URL = "http://localhost:8000";
 
 export default function App() {
-  const [cities, setCities] = useState({});
+  const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   // useEffect + IIFE => Immediately Invoked Function Expression:
@@ -19,10 +19,10 @@ export default function App() {
     (async () => {
       try {
         setIsLoading(true);
-        const data = await fetch(`${BASE_URL}/cities`);
-        const res = await data.json();
-        setCities(res);
-        console.log(cities);
+        const res = await fetch(`${BASE_URL}/cities`);
+        const data = await res.json();
+        setCities(data);
+        console.log(data);
       } catch (err) {
         throw new Error("There was an error loading data..." + err);
       } finally {
@@ -41,8 +41,14 @@ export default function App() {
         <Route path="login" element={<Login />} />
         <Route path="app" element={<AppLayout />}>
           {/* index means that it would be our default Route, when there is no nested route and it would be the same when we have this nested route: /app/cities */}
-          <Route index element={<CityList />} />
-          <Route path="cities" element={<CityList />} />
+          <Route
+            index
+            element={<CityList cities={cities} isLoading={isLoading} />}
+          />
+          <Route
+            path="cities"
+            element={<CityList cities={cities} isLoading={isLoading} />}
+          />
           <Route path="countries" element={<p>Countries</p>} />
           <Route path="form" element={<p>Form</p>} />
         </Route>
