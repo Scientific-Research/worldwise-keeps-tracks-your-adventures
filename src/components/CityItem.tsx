@@ -10,6 +10,7 @@ const formatDate = (date: string | number | Date) =>
 
 export const CityItem = ({ city }: any) => {
   // console.log(city);
+  
   const { cityName, emoji, date } = city;
   return (
     <li className={styles.cityItem}>
