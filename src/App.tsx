@@ -6,8 +6,31 @@ import PageNotFound from "./pages/PageNotFound";
 import { AppLayout } from "./pages/AppLayout";
 import Login from "./pages/Login";
 import { CityList } from "./components/CityList";
+import { useEffect, useState } from "react";
+
+const BASE_URL = "http://localhost:8000";
 
 export default function App() {
+  const [cities, setCities] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  // useEffect + IIFE => Immediately Invoked Function Expression:
+  useEffect(() => {
+    (async () => {
+      try {
+        setIsLoading(true);
+        const data = await fetch(`${BASE_URL}/cities`);
+        const res = await data.json();
+        setCities(res);
+        console.log(cities);
+      } catch (err) {
+        throw new Error("There was an error loading data..." + err);
+      } finally {
+        setIsLoading(false);
+      }
+    })();
+  }, []); // we don't need to add the dependency here, otherwise we get the problem of looping
+
   return (
     <BrowserRouter>
       <Routes>
