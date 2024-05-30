@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./City.module.css";
 
 const formatDate = (date: string | number | Date) =>
@@ -14,6 +14,12 @@ function City() {
   const { id } = useParams();
   console.log(id);
 
+  // using useSearchParams() to get the lat and lng from URL: we can use it everywhere in the program to get the lat and lng from URL, without defining an extra piece of state and pass it to other components as props! searchParams is like a state variable but it is not, it is just a built-in element in react-router-dom and we can not pass it as props to other components, rather we have to repeat it anywhere when we need it. It is something like Context API...
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const lat = searchParams.get("lat");
+  const lng = searchParams.get("lng");
+
   // TEMP DATA
   const currentCity = {
     cityName: "Lisbon",
@@ -24,7 +30,14 @@ function City() {
 
   const { cityName, emoji, date, notes } = currentCity;
 
-  return <h1>CITY {id}</h1>;
+  return (
+    <>
+      <h1>CITY ID: {id}, </h1>
+      <h3>
+        position:{lat},{lng}
+      </h3>
+    </>
+  );
 
   // return (
   //   <div className={styles.city}>
