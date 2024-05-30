@@ -12,7 +12,7 @@ const formatDate = (date: string | number | Date) =>
 function City() {
   // useParams as custom react hook gives us the id of every city! when we don't destrcut it, it would be in string format, otherwise it would be in integer format!
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   // using useSearchParams() to get the lat and lng from URL: we can use it everywhere in the program to get the lat and lng from URL, without defining an extra piece of state and pass it to other components as props! searchParams is like a state variable but it is not, it is just a built-in element in react-router-dom and we can not pass it as props to other components, rather we have to repeat it anywhere when we need it. It is something like Context API...
   const [searchParams, setSearchParams] = useSearchParams();
