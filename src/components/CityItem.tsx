@@ -12,7 +12,7 @@ const formatDate = (date: string | number | Date) =>
 export const CityItem = ({ city }: any) => {
   const { cityName, emoji, date, id, position } = city;
 
-  // Add the position of a city(Latitude and Longitude) as a query string to URL: after bring the lat and lng to the URL, you can access them everywhere in the Program as global query variables using fetch method.
+  // Add the position of a city(Latitude and Longitude) as a query string to URL: after bring the lat and lng to the URL, you can access them everywhere in the Program as global query variables using useSearchParams() method.
 
   return (
     <li>
