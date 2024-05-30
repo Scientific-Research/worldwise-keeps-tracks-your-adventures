@@ -10,12 +10,16 @@ const formatDate = (date: string | number | Date) =>
   }).format(new Date(date));
 
 export const CityItem = ({ city }: any) => {
-  // console.log(city);
+  const { cityName, emoji, date, id, position } = city;
 
-  const { cityName, emoji, date, id } = city;
+  // Add the position of a city(Latitude and Longitude) as a query string to URL: after bring the lat and lng to the URL, you can access them everywhere in the Program as global query variables using fetch method.
+
   return (
     <li>
-      <Link className={styles.cityItem} to={`${id}`}>
+      <Link
+        className={styles.cityItem}
+        to={`${id}?lat=${position.lat}&lng=${position.lng}`}
+      >
         <span className={styles.emoji}>{emoji}</span>
         <h3 className={styles.name}>{cityName}</h3>
         <time className={styles.date}>({formatDate(date)})</time>
