@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import styles from "./Form.module.css";
+import { Button } from "./Button";
 
 export function convertToEmoji(countryCode: any) {
   const codePoints = countryCode
@@ -51,8 +52,11 @@ function Form() {
       </div>
 
       <div className={styles.buttons}>
-        <button>Add</button>
-        <button>&larr; Back</button>
+        {/* we don't use the regular HTML button, rather, we use the self-defined button which is already definded in Button.tsx - using Button, we dynamically assign the type of the button using type prop string like primary, back */}
+        <Button type="primary">Add</Button>
+        <Button type="back">&larr; Back</Button>
+        {/* <button>Add</button>
+        <button>&larr; Back</button> */}
       </div>
     </form>
   );
