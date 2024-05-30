@@ -49,7 +49,8 @@ export default function App() {
             index
             // element={<CityList cities={cities} isLoading={isLoading} />}
             // Navigate help us here to go directly to the cities without click on the cities and actually this is redirect from localhost:5173 to app and then to the cities immediately!
-            element={<Navigate to="cities" />}
+            // using replace to back to the main page, otherwise it doesn't go back to the main pagge! => with replace, it stores the current URL in history stack of the browser!
+            element={<Navigate replace to="cities" />}
           />
           <Route
             path="cities"
