@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { Product } from "./pages/Product";
@@ -47,7 +47,9 @@ export default function App() {
           {/* index means that it would be our default Route, when there is no nested route and it would be the same when we have this nested route: /app/cities */}
           <Route
             index
-            element={<CityList cities={cities} isLoading={isLoading} />}
+            // element={<CityList cities={cities} isLoading={isLoading} />}
+            // Navigate help us here to go directly to the cities without click on the cities and actually this is redirect from localhost:5173 to app and then to the cities immediately!
+            element={<Navigate to="cities" />}
           />
           <Route
             path="cities"
