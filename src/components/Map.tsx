@@ -23,7 +23,7 @@ export const Map = () => {
           setSearchParams({ lat: "23", lng: "25" });
         }}
       >
-        Chnage Position
+        Change Position
       </button>
     </div>
   );
