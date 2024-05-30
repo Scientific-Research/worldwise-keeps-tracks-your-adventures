@@ -20,10 +20,11 @@ export const CountryList = ({ cities, isLoading }: any) => {
 
   // console.log("countries " + countries);
 
+  // country in below is consisting of country and emoji
   return (
     <ul className={styles.countryList}>
-      {countries.map((country: any, i: any) => (
-        <CountryItem country={country} key={i} />
+      {countries.map((country: { country: string }) => (
+        <CountryItem country={country} key={country.country} />
       ))}
     </ul>
   );

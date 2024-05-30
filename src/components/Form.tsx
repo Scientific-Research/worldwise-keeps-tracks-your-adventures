@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import styles from "./Form.module.css";
 import { Button } from "./Button";
+import { useNavigate } from "react-router-dom";
 
 export function convertToEmoji(countryCode: any) {
   const codePoints = countryCode
@@ -14,6 +15,8 @@ export function convertToEmoji(countryCode: any) {
 }
 
 function Form() {
+  const navigate = useNavigate(); // it was called as useHistory() in previous version of react!
+
   const [cityName, setCityName] = useState("");
   const [country, setCountry] = useState("");
   const [date, setDate] = useState(new Date().toUTCString());
@@ -54,7 +57,18 @@ function Form() {
       <div className={styles.buttons}>
         {/* we don't use the regular HTML button, rather, we use the self-defined button which is already definded in Button.tsx - using Button, we dynamically assign the type of the button using type prop string like primary, back */}
         <Button type="primary">Add</Button>
-        <Button type="back">&larr; Back</Button>
+        {/* we have to define the number of steps we want to go back to the browser history:      -1 means we navigate back in the Browser history
+        +1 or 1 means navigate forward in the Browser hsitory 
+        or we can set the step as 2 or more but it used normally for back Navigation*/}
+        <Button
+          type="back"
+          onClick={(e: { preventDefault: () => void }) => {
+            e.preventDefault(); // to prevent the form from relaoding when i click on the Back Button!
+            navigate(-1);
+          }}
+        >
+          &larr; Back
+        </Button>
         {/* <button>Add</button>
         <button>&larr; Back</button> */}
       </div>
