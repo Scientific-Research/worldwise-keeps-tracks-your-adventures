@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import styles from "./City.module.css";
 
 const formatDate = (date: string | number | Date) =>
@@ -9,6 +10,10 @@ const formatDate = (date: string | number | Date) =>
   }).format(new Date(date));
 
 function City() {
+  // useParams as custom react hook gives us the id of every city! when we don't destrcut it, it would be in string format, otherwise it would be in integer format!
+  const { id } = useParams();
+  console.log(id);
+
   // TEMP DATA
   const currentCity = {
     cityName: "Lisbon",
@@ -19,7 +24,7 @@ function City() {
 
   const { cityName, emoji, date, notes } = currentCity;
 
-  return <h1>CITY</h1>;
+  return <h1>CITY {id}</h1>;
 
   // return (
   //   <div className={styles.city}>
